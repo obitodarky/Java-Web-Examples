@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Practical 2</title>
+        <style>
+            .l1
+            {
+                font-size:17px;
+            }
+            .t1
+            {
+                height:30px;
+                border-radius:3px;
+                
+            }
+        </style>
+        <script>
+            function check()
+            {
+                var a,b;
+               
+                a = document.getElementById("txtno").value;
+                b = document.getElementById("txtname").value;
+               
+                if(a==="")
+                {
+                    alert("Enter the Value of No");
+                    return false;
+                    
+                    
+                }
+                else if(b==="")
+                {
+                    
+                    alert("Enter the Value of Name");
+                    return false;
+                }
+                else
+                {
+                     document.getElementById("frmmain").submit();
+                }
+                
+               
+                
+            }
+        </script>
+    </head>
+    <body>
+        <form name="frmmain" action="saveData.jsp" method="get" id='frmmain'>
+           
+            <table align='center' width=400px>
+                 
+                <tr>
+                    <td width=150px><div class='l1'>Enter No</div></td>
+                    <td><input type='text' id='txtno' class='t1' name='txtno'></td>
+                </tr>
+                <tr>
+                        <td><div class='l1'>Enter Name</div></td>
+                        <td><input type='text' id='txtname' class='t1' name='txtname'></td>
+                </tr>
+                
+                <tr>
+                        <td></td>
+                        <td><input type='button' id='btn_click' value='Save Details' onclick="check()"></td>
+                </tr>
+            </table>
+             <input type='hidden' name='act' value='insert'>
+        </form>
+    </body>
+</html>
