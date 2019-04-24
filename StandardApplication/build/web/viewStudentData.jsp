@@ -14,7 +14,7 @@
     <body>
         <%@include file="LoginInclude.jsp"%>
         <% 
-        
+            int count=0;
             try{
                 
                 Class.forName("com.mysql.jdbc.Driver");
@@ -30,6 +30,11 @@
                             "       <a href='editData.jsp?id="+ rs.getString(1) +"'>Edit</a>"        
                             + "<br>"
                     );
+                    count++;
+                }
+                
+                if(count==0){
+                    out.println("No such user");
                 }
                 con.close();
                 

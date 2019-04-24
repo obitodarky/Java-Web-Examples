@@ -31,12 +31,12 @@ public class Login extends HttpServlet {
             
             if(admin==null){
                 HttpSession session = request.getSession();
-                session.setAttribute("student",student);
-                response.sendRedirect("");
+                session.setAttribute("name",student);
+                response.sendRedirect("studentLogin.jsp");
                 
             } else if(student==null){
                 HttpSession session = request.getSession();
-                session.setAttribute("admin",admin);
+                session.setAttribute("name",admin);
                 response.sendRedirect("AdminModule.html");
                 
             }
